@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import './style/AdminSidebar.css'
+import { UserContext } from "../context/UserContext";
 
 const AdminSidebar = (props) => {
+    const [token, setToken] = useContext(UserContext)
+    const handleLogout = async () => {
+        setToken(null)
+    }
+
     return (
         <div className="admin-sidebar"> 
             <div className="admin-profile">
@@ -15,7 +21,7 @@ const AdminSidebar = (props) => {
                     <li onClick={() => props.showGallerySettings()}>Gallery Settings</li>
                 </ul>
             </nav>
-            <p>Log Out</p>
+            <p onClick={handleLogout}>Log Out</p>
         </div>
     )
 }

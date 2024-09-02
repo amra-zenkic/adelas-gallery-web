@@ -3,12 +3,16 @@ import {jwtDecode} from "jwt-decode"; // Default import
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 
-export default function AdminRoute({ children }) {
+export default function AdminLoggenIn({ children }) {
+  // function that checks if the user is logged in
+  // if not, redirect to home page
   const [token, ] = useContext(UserContext);
 
   if (token && token !== "null") { // Check if the token exists
-    return children;
+    console.log("Token exists ", token);
+    return <Navigate to="/admin" />;
   } else { // user is not logged in
-    return <Navigate to="/" />;
+    console.log("Token does not exist ", token);
+    return children
   }
 }

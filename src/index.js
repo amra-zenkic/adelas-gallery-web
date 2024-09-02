@@ -10,6 +10,7 @@ import {
 import Admin from './pages/Admin';
 import { UserProvider } from './context/UserContext';
 import AdminRoute from './auth/AdminRoute';
+import AdminLoggenIn from './auth/AdminLoggedIn';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin/login",
-    element: <AdminLogin />
+    element: (
+      <AdminLoggenIn>
+        <AdminLogin />
+      </AdminLoggenIn>
+    )
   },
   {
     path: "/admin",
