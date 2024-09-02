@@ -1,0 +1,60 @@
+:root {
+    --lightBlue: #A9D0D1;
+    --lightPink: #D7ABB5;
+}
+* {
+    margin: 0;
+}
+.admin-login-container {
+    display: grid;
+    grid-template-columns: auto 40%;
+}
+.admin-login-right {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--lightBlue);
+    border-radius: 40px 0 0 40px;
+}
+.admin-login-photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 700px;
+}
+.admin-login-left {
+    width: 50%;
+    margin: auto;
+    
+}
+.admin-login-left h2 {
+    margin-bottom:50px;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+.admin-login-left form > *{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.admin-login-left form > input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.admin-login-left form > button {
+    height: 40px;
+    width: 80px;
+    margin-top: 40px;
+    background-color: var(--lightBlue);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.admin-login-left form > button:hover {
+    box-shadow: 0px 0px 22px 0px var(--lightBlue);
+    cursor: pointer;
+    transform: scale(1.01);
+}

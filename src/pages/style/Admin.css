@@ -1,0 +1,19 @@
+.admin-page{
+    display: block;
+    background-color: #F5F5F5;
+}
+.admin-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.admin-page .admin-helper {
+    width: 100%;
+}
+.admin-container > .admin-content {
+    padding: 30px 10px;
+}
+.admin-dashboard-title {
+    letter-spacing: 3px;
+    font-size: 37px;
+    font-weight: 350;
+}

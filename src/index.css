@@ -1,3 +1,16 @@
+:root {
+  --lightBlue: #A9D0D1;
+  --lightPink: #D7ABB5;
+}
+
+h1, h2 {
+  font-family: 'cardo', serif;
+}
+
+* {
+  font-family: 'poiret one', serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

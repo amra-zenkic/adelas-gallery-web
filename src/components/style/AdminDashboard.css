@@ -1,0 +1,49 @@
+:root {
+    --lightBlue: #A9D0D1;
+    --lightPink: #D7ABB5;
+    --lighterPink: #e4bec7;
+}
+.admin-dashboard-profile-details-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.admin-dashboard-gallery-details-container  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.admin-dashboard-profile-details > * {
+    margin: 5px;
+}
+.admin-dashboard-more-settings > * {
+    margin: 5px;
+}
+.admin-dashboard-more-settings > p:hover {
+    cursor: pointer;
+    color: white;
+}
+.admin-dashboard-profile-details > .admin-dashboard-edit-profile {
+    text-align: center;
+}
+.admin-dashboard-profile-details > .admin-dashboard-edit-profile:hover {
+    cursor: pointer;
+    color: white;
+}
+.admin-dashboard-profile-details-container > .admin-dashboard-profile-details, .admin-dashboard-more-settings, .admin-dashboard-gallery-details {
+    margin: 10px;
+    padding: 20px 30px;
+    color: white;
+    background-color: var(--lighterPink);
+    border-radius: 10px;
+    
+}
+.admin-dashboard-profile-details-container > .admin-dashboard-profile-details  > h2 {
+    margin-bottom: 10px;
+}
+.admin-dashboard-profile-details-container > .admin-dashboard-more-settings  > h2 {
+    margin-bottom: 10px;
+}
+.admin-dashboard-gallery-details  > h2 {
+    margin-bottom: 10px;
+}
