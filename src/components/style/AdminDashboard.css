@@ -47,3 +47,28 @@
 .admin-dashboard-gallery-details  > h2 {
     margin-bottom: 10px;
 }
+
+.modal {
+    max-height: 80vh; /* Set a max-height for the popup */
+    overflow-y: auto;
+}
+.user-modal {
+    height: fit-content;
+    width: 80vw;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.content {
+    padding: 30px;
+
+}
+#popup-2 {
+    padding: 0;
+    border-radius: 20px;
+}
+

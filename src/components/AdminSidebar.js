@@ -1,17 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import './style/AdminSidebar.css'
 import { UserContext } from "../context/UserContext";
+import {jwtDecode} from "jwt-decode";
 
 const AdminSidebar = (props) => {
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"
     const [token, setToken] = useContext(UserContext)
+    const user = jwtDecode(token);
     const handleLogout = async () => {
         setToken(null)
     }
 
+    useEffect(() => {
+        console.log("iz side", props.adminData )
+    }, [props.adminData])
+    
+
     return (
         <div className="admin-sidebar"> 
             <div className="admin-profile">
-                <img  alt="Admin profile photo"/>
+                <img src={API_URL + props.adminData.photo_path}  alt={API_URL + user.photo_path}/>
                 <p className="admin-name">Adela Zenkić</p>
             </div>
             <nav>
