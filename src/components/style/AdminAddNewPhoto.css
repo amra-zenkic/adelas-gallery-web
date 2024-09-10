@@ -1,0 +1,107 @@
+/* AdminAddNewPhoto.css */
+
+.admin-add-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-add-photo-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .admin-add-photo-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px 20px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .admin-add-photo-form label {
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .admin-add-photo-form input[type="text"],
+  .admin-add-photo-form input[type="date"],
+  .admin-add-photo-form input[type="file"],
+  .admin-add-photo-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .admin-add-photo-form input[type="text"]:focus,
+  .admin-add-photo-form input[type="date"]:focus,
+  .admin-add-photo-form input[type="file"]:focus,
+  .admin-add-photo-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .admin-add-photo-form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .admin-add-photo-form input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .admin-add-photo-form .checkbox-group {
+    grid-column: span 2;
+    margin-top: 10px;
+  }
+  
+  .admin-add-photo-form .checkbox-group div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .admin-add-photo-buttons {
+    display: flex;
+    gap: 15px;
+    grid-column: span 2;
+    margin-top: 20px;
+  }
+  
+  .admin-add-photo-buttons button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-add-photo-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-add-photo-buttons button.cancel {
+    background-color: #f44336;
+  }
+  
+  .admin-add-photo-buttons button.cancel:hover {
+    background-color: #d32f2f;
+  }
+  

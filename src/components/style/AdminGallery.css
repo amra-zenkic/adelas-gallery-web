@@ -1,0 +1,6 @@
+.admin-gallery-container {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 1%;
+    grid-row-gap: 1%;
+}
