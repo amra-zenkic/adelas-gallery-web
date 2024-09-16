@@ -34,9 +34,11 @@ const AdminLogin = () => {
             if (response.ok) {
                 await setToken(data.access_token);
             } else {
+                toast.error(data.detail);
                 console.log(`Failed to login user: ${data.detail}`);
             }
         } catch (error) {
+            toast.error(error.message);
             console.log(`An error occurred: ${error.message}`);
         }
     }
@@ -48,6 +50,8 @@ const AdminLogin = () => {
 
 
     return (
+        <>
+        <ToastContainer />
         <div className='admin-login-container' id='admin-login-img'>
             <img src={LoginPhoto} className='admin-login-photo'/>
             <div className='admin-login-left'>
@@ -77,6 +81,7 @@ const AdminLogin = () => {
             </div>
             
         </div>
+        </>
     )
 }
 

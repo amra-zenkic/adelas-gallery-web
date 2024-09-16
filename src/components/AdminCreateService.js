@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../context/UserContext';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AdminCreateService = ({ newServiceAdded }) => {
     const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"
@@ -32,8 +34,10 @@ const AdminCreateService = ({ newServiceAdded }) => {
             if (!response.ok) {
                 const errorData = response.json();
                 console.log(errorData.message);
+                toast.error(errorData.message);
             }
             else {
+                toast.success('Service created successfully');
                 newServiceAdded(newService)
             }
         }
@@ -46,6 +50,7 @@ const AdminCreateService = ({ newServiceAdded }) => {
     // ne radi unos kad kucas
     return (
         <div>
+            <ToastContainer />
             <form onSubmit={addNewService}>
                 <label>Service Name</label>
                 <input type="text" name='service_name' onChange={updateService} value={newService.service_name}/>

@@ -3,6 +3,8 @@ import AdminAddNewPhoto from "./AdminAddNewPhoto";
 import { UserContext } from "../context/UserContext";
 import AdminPhotoCard from "./AdminPhotoCard";
 import './style/AdminGallery.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AdminGallery = () => {
     const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000"

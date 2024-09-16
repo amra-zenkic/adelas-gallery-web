@@ -11,9 +11,6 @@ const AdminSidebar = (props) => {
         setToken(null)
     }
 
-    useEffect(() => {
-        console.log("iz side", props.adminData )
-    }, [props.adminData])
     
 
     return (

@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import './style/AdminAddNewPhoto.css'; // Import the CSS file
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AdminAddNewPhoto = ({ addNewPhotoBtn, allAlbums, allCategories, newPhotoAdded }) => {
   const [token] = useContext(UserContext);
@@ -44,14 +46,19 @@ const AdminAddNewPhoto = ({ addNewPhotoBtn, allAlbums, allCategories, newPhotoAd
         },
         body: formData, // Pass the FormData object directly as the body
       });
+
+      console.log("Response from post request:", response);
   
       if (!response.ok) {
-        console.log("Failed to upload photoo", response);
+        //console.log("Failed to upload photoo", response);
+        toast.error("Failed to upload photo");
         return;
       }
       else {
         const data = await response.json();
-        console.log("Success:", data);
+        console.log("Successfuly added:", data);
+
+        toast.success("Photo added successfully", { autoClose: 5000 }); // does not show up
 
         const newPhotoData = await fetch(`${API_URL}/admin/photos/${data.id_photo}`, {
           method: "GET",
@@ -61,7 +68,8 @@ const AdminAddNewPhoto = ({ addNewPhotoBtn, allAlbums, allCategories, newPhotoAd
         })
 
         if(!newPhotoData.ok) {
-          console.log("Failed to fetch new photo", newPhotoData);
+          //console.log("Failed to fetch new photo", newPhotoData);
+          toast.error("Failed to fetch new photo");
           return;
         }
         else {
@@ -74,6 +82,7 @@ const AdminAddNewPhoto = ({ addNewPhotoBtn, allAlbums, allCategories, newPhotoAd
       }
     } catch (error) {
       console.error("Error:", error);
+      toast.error(error.message);
     }
   };
 
@@ -85,7 +94,10 @@ const AdminAddNewPhoto = ({ addNewPhotoBtn, allAlbums, allCategories, newPhotoAd
   };
 
   return (
+    <>
+    <ToastContainer />
     <div className="admin-add-photo-container">
+    
       <h3>Add New Photo</h3>
       <form className="admin-add-photo-form" onSubmit={handleSubmit}>
         <label>Select Photo</label>
@@ -173,6 +185,8 @@ const AdminAddNewPhoto = ({ addNewPhotoBtn, allAlbums, allCategories, newPhotoAd
         </div>
       </form>
     </div>
+    
+    </>
   );
 };
 
